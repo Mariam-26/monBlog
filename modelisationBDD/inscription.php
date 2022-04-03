@@ -78,3 +78,114 @@ if(!empty($_POST)){
 
 ?>
 
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog - Inscription</title>
+  <!-- BOOTSWATCH CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/5.1.3/lux/bootstrap.min.css" integrity="sha512-B5sIrmt97CGoPUHgazLWO0fKVVbtXgGIOayWsbp9Z5aq4DJVATpOftE/sTTL27cu+QOqpI/jpt6tldZ4SwFDZw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+</head>
+
+<body>
+
+<?php require 'inc/nav.inc.php'; ?>
+
+  <div class="p-5 bg-primary">
+      <div class="container">
+          <h1 class="display-3 text-white">Inscription Blog</h1>
+          <p class="lead text-white">Inscrivez-vous sur notre site !</p>
+      </div>
+  </div>
+
+  <div class="container">
+      <div class="row">
+          <div class="col-8 mx-auto">
+          <?php echo $contenu; ?>
+              <form action="#" method="POST">
+
+                  <div class="mb-3">
+                      <label for="civilite">Civilité *</label>
+                      <input type="radio" name="civilite" id="civilite" value="f" class="form-check-input" checked>Féminin
+                      <input type="radio" name="civilite" id="civilite" value="m" class="form-check-input">Masculin
+
+                      <!-- OPTION AVEC SELECT
+                          <select name="civilite" id="civilite">
+                          <option value="f">Féminin</option>
+                          <option value="m">Masculin</option>
+                          </select> -->
+
+                      <!-- Quand j'ai un enum en bdd -> je dois mettre soit des boutons de types radio, soit un select avec des options. Il faudra focément que les options ou les boutons radio aient une "value" -->
+                  </div>
+
+                  <div class="mb-3 row">
+
+                      <div class="col">
+                          <label for="prenom">Prénom *</label>
+                          <input type="text" name="prenom" id="prenom" class="form-control" required>
+                      </div>
+
+                      <div class="col">
+                          <label for="nom">Nom *</label>
+                          <input type="text" name="nom" id="nom" class="form-control" required>
+                      </div>
+                  </div>
+
+                  <div class="mb-3 row">
+
+                      <div class="col">
+                          <label for="email">Email *</label>
+                          <input type="text" name="email" id="email" class="form-control" required>
+                      </div>
+
+                      <div class="col">
+                          <label for="pseudo">Pseudo *</label>
+                          <input type="text" name="pseudo" id="pseudo" class="form-control" required>
+                      </div>
+                  </div>
+
+                  <div class="mb-3 row">
+
+                      <div class="col">
+                          <label for="adresse">Adresse *</label>
+                          <input type="text" name="adresse" id="adresse" class="form-control" required>
+                      </div>
+
+                      <div class="col">
+                          <label for="ville">Ville *</label>
+                          <input type="text" name="ville" id="ville" class="form-control" required>
+                      </div>
+                  </div>
+                  
+                  <div class="mb-3 row">
+
+                      <div class="col">
+                          <label for="code_postal">Code postal *</label>
+                          <input type="text" name="code_postal" id="code_postal" class="form-control" required>
+                      </div>
+
+                      <div class="col">
+                          <label for="mdp">Mot de passe *</label>
+                          <input type="password" name="mdp" id="mdp" class="form-control" required>
+                      </div>
+                  </div>
+
+                  <button type="submit" class="btn btn-primary">S'inscrire</button>
+
+              </form>
+
+          </div>
+      </div>
+  </div>
+
+
+  <!-- BOOTSWATCH JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</body>
+
+</html>
